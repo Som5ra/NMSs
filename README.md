@@ -52,7 +52,7 @@ gcc -O3 -msse2 -mfpmath=sse -ftree-vectorizer-verbose=5 -fopenmp -fPIC -shared -
 </details>
 
 <details>
-  <summary>Bounding Box NMS</summary>
+  <summary>Mask NMS</summary>
 
 ### Mutli class mask NMS (class-aware)
 
