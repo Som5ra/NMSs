@@ -1,6 +1,15 @@
-## NMS(Non-maximum Suppression) tools
+# NMS(Non-maximum Suppression) tools
 
 
+<details open>
+  <summary>Bounding Box NMS</summary>
+    - bbox-nms
+</details>
+
+<details open>
+  <summary>Bounding Box NMS - C language version</summary>
+
+## Bounding Box NMS - C language version
 ### Benchmark (Single Batch / s)
 
 - Each Single-Batch-Data have 2000 bounding boxes
@@ -18,7 +27,7 @@
 
 ### Usage: Refer to batch_parallel_nms.py
 
-```Python
+```Python 
 num_classes = 80
 score_thr = 0.5
 nms_thr = 0.5
@@ -40,3 +49,4 @@ indices_to_keep, nms_out_cls = nms_c.batch_parallel_nms(batched_bboxes, batched_
 ```bash
 gcc -O3 -msse2 -mfpmath=sse -ftree-vectorizer-verbose=5 -fopenmp -fPIC -shared -o c/compiled/batch_parallel_nms.so c/batch_parallel_nms.c 
 ```
+</details>
