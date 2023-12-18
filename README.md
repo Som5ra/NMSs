@@ -1,4 +1,4 @@
-# NMS(Non-maximum Suppression) tools
+# NMS(Non-maximum Suppression) Tools
 
 
 <details>
