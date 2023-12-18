@@ -1,12 +1,12 @@
 # NMS(Non-maximum Suppression) tools
 
 
-<details open>
+<details>
   <summary>Bounding Box NMS</summary>
-    - bbox-nms
+- Refer to ./bbox-nms/nms.py
 </details>
 
-<details open>
+<details>
   <summary>Bounding Box NMS - C language version</summary>
 
 ## Bounding Box NMS - C language version
@@ -49,4 +49,26 @@ indices_to_keep, nms_out_cls = nms_c.batch_parallel_nms(batched_bboxes, batched_
 ```bash
 gcc -O3 -msse2 -mfpmath=sse -ftree-vectorizer-verbose=5 -fopenmp -fPIC -shared -o c/compiled/batch_parallel_nms.so c/batch_parallel_nms.c 
 ```
+</details>
+
+<details>
+  <summary>Bounding Box NMS</summary>
+
+### Mutli class mask NMS (class-aware)
+
+- Class-unaware: a proposal can belong to mutiple single class
+
+- inputs:
+    - masks: NDArray (num_masks, W, H) (type: Boolean)
+    - scores: NDArray (num_masks, num_classes) in [0, 1] 
+    - score_thr: float (score threshold of bounding box)
+    - nms_thr: float (intersection threshold of mask)
+- output:
+    - [NDArray of indices to keep, NDArray of class id]
+
+```
+pip install numba
+pip install numpy
+```
+
 </details>
